@@ -32,6 +32,7 @@ gem 'pagy', '~> 5.10.1'
 gem 'simple_form', '~> 5.1.0'
 
 group :development, :test do
+  gem 'apparition', '~> 0.6.0'
   gem 'factory_bot_rails', '~> 6.1'
   gem 'ffaker', '~> 2.18'
   gem 'pry-byebug', '~> 3.9'
@@ -46,6 +47,7 @@ end
 group :development do
   gem 'awesome_print', '~>1.9.2'
   gem 'better_errors', '~>2.9.1'
+  gem 'binding_of_caller', '~> 1.0.0'
   gem 'brakeman', '~> 5.2.1'
   gem 'bundle-audit', '~> 0.1.0'
   gem 'database_consistency', '~> 1.1.12', require: false

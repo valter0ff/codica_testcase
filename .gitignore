@@ -41,3 +41,5 @@
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+coverage/
