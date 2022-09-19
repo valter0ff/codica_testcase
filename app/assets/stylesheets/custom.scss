@@ -1,0 +1,12 @@
+.pop-queries {
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  justify-content:center;
+  border-radius:4px;
+  width:160px;
+  height:100px;
+  box-shadow:0 0 10px 0 rgba(0,0,0,.05);
+  transition:.4s;
+  cursor:pointer
+ }
