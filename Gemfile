@@ -24,12 +24,16 @@ gem 'sprockets-rails', '~> 3.4.2'
 
 gem 'activeadmin', '~> 2.9'
 gem 'activeadmin_addons', '~> 1.9.0'
+gem 'aws-sdk-s3', '~> 1.114.0'
 gem 'devise', '~> 4.8.0'
 gem 'draper', '~> 4.0.1'
+gem 'image_processing', '~> 1.0'
 gem 'haml', '~> 5.2.2'
 gem 'haml-rails', '~> 2.0.1'
 gem 'pagy', '~> 5.10.1'
 gem 'simple_form', '~> 5.1.0'
+gem 'shrine', '~> 3.0'
+
 
 group :development, :test do
   gem 'apparition', '~> 0.6.0'
@@ -55,6 +59,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rails_best_practices', '~> 1.23.1'
   gem 'rails_db', '>= 2.3.1'
+  gem 'solargraph'
   gem 'table_print', '~>1.5.7'
   gem 'web-console', '~> 4.2.0'
 end
