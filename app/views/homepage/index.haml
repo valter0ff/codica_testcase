@@ -14,11 +14,11 @@
     .col.text-center 
       %h2= t('.popular_categories')
   .row.pt-3.pb-3
-    - @categories.each do |cat|
+    - @categories.each do |category|
       .col 
         .card.text-center.shadow-sm
           %a.pop-queries{href: "/doctors/29219-kyyiv/20-terapevt"}
             %p.mt-2
               %span
-                = image_tag(cat.image_url(:small), size: '50') if cat.image
-            %p.text-center.mx-1= cat.title
+                = image_tag(category.image_url(:small), size: '50') if category.image
+            %p.text-center.mx-1= category.title

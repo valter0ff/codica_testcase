@@ -7,7 +7,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-['Allergy and immunology', 'Dermatology', 'Family medicine', 'Neurology', 'Gynecology', 'Ophthalmology', 'Pediatrics', 'Psychiatry', 'Surgery', 'Urology'].each do |spec|
+['Allergy and immunology', 'Dermatology', 'Otolaryngology', 'Neurology', 'Gastroenterology', 'Gynecology', 'Ophthalmology', 'Pediatrics', 'Surgery', 'Urology', 'Cardiology'].each do |spec|
   Category.create(title: spec)
 end
 

@@ -3,5 +3,5 @@
 class Category < ApplicationRecord
   include ImageUploader::Attachment(:image)
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
 end
