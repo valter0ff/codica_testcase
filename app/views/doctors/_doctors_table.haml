@@ -1,0 +1,18 @@
+- doctors.each do |doctor|
+  .col-xs-6.col-sm-3.doctor_card
+    .general-thumb-wrap
+      .thumbnail.general-thumbnail
+        = image_tag doctor.main_image, class: 'img-shadow general-thumbnail-img', alt: 'design-doctor'
+        .thumb-hover
+          .general-thumb-link-wrap
+            = link_to doctor, class: 'thumb-hover-link show-link' do
+              %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+            -# = link_to doctor_cart_items_path(doctor_id: doctor.id, cart_item: { doctors_count: 1 }),
+            -#     class: 'thumb-hover-link buy-link',
+            -#     method: :post do
+            -#   %i.fa.fa-shopping-cart.thumb-icon
+    .general-thumb-info
+      %p.name= doctor.name
+      %p.font-16.in-gold-500.experience= doctor.experience
+      %span.divider-sm
+      %p.lead.small.workplace= doctor.workplace

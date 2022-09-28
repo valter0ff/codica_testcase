@@ -1,0 +1,14 @@
+%h1.general-title-margin= (@category.title if @category) || t('.page_title')
+%ul.list-inline.pt-10.mb-25.mr-240
+  %li.mr-35
+    = link_to t('.all_categories'), request.params.merge(category_id: nil), class: 'filter-link'
+    - @categories.each do |category|
+      %li.mr-35
+        = link_to request.params.merge(category_id: category.id), class: 'filter-link custom-filter' do
+          = category.title
+.mb-120
+  .row#doctors_table
+    = render 'doctors_table', doctors: @doctors
+  - if @pagy.pages > 1
+    .text-center#div_next_link
+      = render 'next_page_button', pagy: @pagy

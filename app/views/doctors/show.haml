@@ -1,0 +1,30 @@
+= link_to :back, class: 'general-back-link' do
+  %i.fa.fa-long-arrow-left.mr-15
+  = t('.back_button')
+.row
+  .col-sm-6
+    .product-gallery
+      .mb-20
+        = image_tag @doctor.main_image, class: 'img-responsive main-image'
+  .col-sm-6.doctor-info
+    %h1.mt-res-0.doctor-title= @doctor.name
+    .row
+      .col-xs-12.col-md-4
+        %p.h1.price.in-gold-500.mt-10= @doctor.price_with_currency
+    .general-info-wrap.divider-lg
+      %p= t('.descriprion')
+      %p.lead.small.line-height-2.text-justify.description= @doctor.truncated_description
+    .general-info-wrap.divider-lg
+      .clearfix
+        %p.pull-left= t('.year_publication')
+        %p.lead.small.pull-right.year_publication= @doctor.year_publication
+    .general-info-wrap.divider-lg
+      .clearfix
+        %p.pull-left= t('.dimensions_title')
+        %p.lead.small.pull-right.dimensions= @doctor.dimensions
+    .general-info-wrap.divider-lg
+      .clearfix
+        %p.pull-left= t('.materials')
+        %p.lead.small.pull-right.materials= @doctor.all_materials.join(', ')
+- if user_signed_in?
+  -# = render 'reviews/review_form', doctor: @doctor, review: @review

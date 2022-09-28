@@ -3,9 +3,8 @@
   = render 'partials/head'
   
   %body
-    %main
-      = render 'partials/header', cached: true
-      .container
-        = render 'partials/flash_messages'
-        = yield
-      = render 'partials/footer', cached: true
+    = render 'partials/header', cached: true, categories: @categories
+    %main.container
+      = render 'partials/flash_messages'
+      = yield
+    = render 'partials/footer', cached: true
