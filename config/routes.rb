@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  authenticated :doctor do
+    root to: 'doctors/appointments#index', as: :authenticated_doctor_root
+  end
   root to: 'homepage#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -9,8 +12,9 @@ Rails.application.routes.draw do
     get 'doctors/edit' => 'devise/registrations#edit', :as => 'edit_doctor_registration'    
     patch 'doctors' => 'devise/registrations#update', :as => 'doctor_registration'            
   end
-  authenticated :doctor do
-    root to: 'doctorprofiles#show', as: :authenticated_doctor_root
+  namespace :doctors do
+    resources :appointments, only: %i[index show]
+    resource :profile, only: %i[show edit update]
   end
   %w[404 422 500].each do |code|
     match "/#{code}", to: 'errors#show', code: code, via: :all

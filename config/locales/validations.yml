@@ -9,10 +9,10 @@ en:
           attributes:
             phone_number:
               taken: has already been taken
-              invalid: "format is incorrect. Must start with `+` character followed by only digits. Max length is 15"
-            password:
-              invalid: "format is incorrect. Please follow the next rules: use at least 8 characters, 1 upper case letter and at least 1 digit, without spaces inside"
+              invalid: "format is incorrect. Must start with `+` character followed by only digits."
             password_confirmation:
               confirmation: doesn't match Password
+            name:
+              taken: has already been taken
 
 

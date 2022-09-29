@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Category, type: :model do
-  subject(:category) { create(:category, title: good_title) }
-
-  let(:good_title) { FFaker::Book.unique.genre }
+  subject(:category) { create(:category) }
 
   describe 'ActiveModel validations' do
     it { is_expected.to validate_presence_of(:title) }

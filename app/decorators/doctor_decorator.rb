@@ -6,6 +6,10 @@ class DoctorDecorator < ApplicationDecorator
   def main_image
     return Constants::Account::MAIN_IMAGE_PLACEHOLDER unless object.image
 
-    object.image_url(:large)
+    object.image_url
+  end
+
+  def short_description
+    description.split('.').first
   end
 end

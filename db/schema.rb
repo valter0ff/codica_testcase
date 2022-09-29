@@ -52,15 +52,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_26_152008) do
     t.string "phone_number", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
-    t.integer "experience", default: 0, null: false
-    t.string "description", default: "", null: false
-    t.string "workplace", default: "", null: false
+    t.integer "expirience", default: 0, null: false
+    t.string "description"
+    t.string "workplace"
+    t.string "workplace_address"
     t.datetime "remember_created_at"
     t.text "image_data"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_doctors_on_category_id"
+    t.index ["name"], name: "index_doctors_on_name", unique: true
     t.index ["phone_number"], name: "index_doctors_on_phone_number", unique: true
   end
 
