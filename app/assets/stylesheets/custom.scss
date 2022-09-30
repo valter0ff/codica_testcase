@@ -1,12 +1,23 @@
-.pop-queries {
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  justify-content:center;
-  border-radius:4px;
-  width:160px;
-  height:100px;
-  box-shadow:0 0 10px 0 rgba(0,0,0,.05);
-  transition:.4s;
-  cursor:pointer
- }
+ .form-signin {
+  max-width: 330px;
+  padding: 15px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="phone-number"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

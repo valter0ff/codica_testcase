@@ -2,3 +2,5 @@ en:
   doctors:
     admin:
       short_description: Short description
+    index:
+      all_categories: All categories

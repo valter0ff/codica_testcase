@@ -2,7 +2,7 @@
 
 class DoctorsController < ApplicationController
   include Pagy::Backend
-  
+
   ITEMS_PER_PAGE = 12
 
   before_action :set_category, only: :index
@@ -24,6 +24,6 @@ class DoctorsController < ApplicationController
   end
 
   def filtered_doctors
-   @category.blank? ? Doctor.all : @category.doctors
+    @category.blank? ? Doctor.all : @category.doctors
   end
 end

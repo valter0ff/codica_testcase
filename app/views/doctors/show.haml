@@ -10,18 +10,19 @@
     %h1.mt-res-0.doctor-title= @doctor.name
     .row
       .col-xs-12.col-md-4
-        %p.h1.price.in-gold-500.mt-10= @doctor.price_with_currency
+        %p= t('.category')
+        %p.h1.price.in-gold-500.mt-10= @doctor.category
     .general-info-wrap.divider-lg
-      %p= t('.descriprion')
-      %p.lead.small.line-height-2.text-justify.description= @doctor.truncated_description
-    .general-info-wrap.divider-lg
-      .clearfix
-        %p.pull-left= t('.year_publication')
-        %p.lead.small.pull-right.year_publication= @doctor.year_publication
+      %p= t('.description')
+      %p.lead.small.line-height-2.text-justify.description= @doctor.description
     .general-info-wrap.divider-lg
       .clearfix
-        %p.pull-left= t('.dimensions_title')
-        %p.lead.small.pull-right.dimensions= @doctor.dimensions
+        %p.pull-left= t('.workplace')
+        %p.lead.small.pull-right.year_publication= @doctor.workplace
+    .general-info-wrap.divider-lg
+      .clearfix
+        %p.pull-left= t('.expirience')
+        %p.lead.small.pull-right.dimensions= @doctor.expirience
     .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left= t('.materials')

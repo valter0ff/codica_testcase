@@ -9,16 +9,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :doctors, skip: [:registrations]
   devise_scope :doctor do
-    get 'doctors/edit' => 'devise/registrations#edit', :as => 'edit_doctor_registration'    
-    patch 'doctors' => 'devise/registrations#update', :as => 'doctor_registration'            
+    get 'doctors/edit' => 'devise/registrations#edit', :as => 'edit_doctor_registration'
+    patch 'doctors' => 'devise/registrations#update', :as => 'doctor_registration'
   end
   namespace :doctors do
     resources :appointments, only: %i[index show]
     resource :profile, only: %i[show edit update]
   end
   %w[404 422 500].each do |code|
-    match "/#{code}", to: 'errors#show', code: code, via: :all
+    match "/#{code}", to: 'errors#show', code:, via: :all
   end
   resources :doctors, only: %i[index show]
-  
 end

@@ -2,7 +2,7 @@
 
 ActiveAdmin.register Category do
   controller { skip_before_action :set_all_categories }
-  
+
   config.sort_order = 'id_asc'
 
   permit_params :title, :image

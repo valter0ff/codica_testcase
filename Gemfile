@@ -27,13 +27,12 @@ gem 'activeadmin_addons', '~> 1.9.0'
 gem 'aws-sdk-s3', '~> 1.114.0'
 gem 'devise', '~> 4.8.0'
 gem 'draper', '~> 4.0.1'
-gem 'image_processing', '~> 1.0'
 gem 'haml', '~> 5.2.2'
 gem 'haml-rails', '~> 2.0.1'
+gem 'image_processing', '~> 1.0'
 gem 'pagy', '~> 5.10.1'
-gem 'simple_form', '~> 5.1.0'
 gem 'shrine', '~> 3.0'
-
+gem 'simple_form', '~> 5.1.0'
 
 group :development, :test do
   gem 'apparition', '~> 0.6.0'

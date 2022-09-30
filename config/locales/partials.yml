@@ -6,3 +6,7 @@ en:
       site_title: E-Doctors Platform
       home_link: Homepage
       categories_link: Medical specialties
+      all_categories: All categories
+      sign_up: Sign up
+    footer:
+      company: E-Doctors Company, Inc

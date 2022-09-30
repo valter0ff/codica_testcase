@@ -3,8 +3,9 @@
 ActiveAdmin.register Doctor do
   decorate_with DoctorDecorator
 
-  permit_params :phone_number, :password, :password_confirmation, :name, :expirience, :description, :workplace, :workplace_address, :remember_created_at, :image, :category_id
-  
+  permit_params :phone_number, :password, :password_confirmation, :name, :expirience, :description, :workplace,
+                :workplace_address, :remember_created_at, :image, :category_id
+
   index do
     selectable_column
     id_column

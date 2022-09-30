@@ -12,6 +12,7 @@
               data: {'bs-toggle': 'dropdown'}, role: 'button',
               class: 'categories-link nav-link dropdown-toggle'
           %ul.dropdown-menu
+            = link_to t('.all_categories'), doctors_path,  class: 'dropdown-item'
             - categories.each do |category|
               %li= link_to "#{category.title}", doctors_path(category_id: category.id), class: 'dropdown-item'
         - if doctor_signed_in?

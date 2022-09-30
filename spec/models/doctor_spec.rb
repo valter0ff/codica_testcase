@@ -10,7 +10,7 @@ RSpec.describe Doctor, type: :model do
     context 'when phone_number' do
       let(:taken_error) { I18n.t('phone_number.taken', scope: errors_path) }
       let(:invalid_error) { I18n.t('phone_number.invalid', scope: errors_path) }
-      let(:valid_phone_number) { FFaker::PhoneNumberUA.international_mobile_phone_number.gsub(/[ -]/,'') }
+      let(:valid_phone_number) { FFaker::PhoneNumberUA.international_mobile_phone_number.gsub(/[ -]/, '') }
       let(:phone_number_min_size) { Constants::Account::PHONE_NUMBER_MIN_SIZE }
       let(:phone_number_max_size) { Constants::Account::PHONE_NUMBER_MAX_SIZE }
 
@@ -36,7 +36,6 @@ RSpec.describe Doctor, type: :model do
       it { is_expected.to validate_presence_of(:name).with_message(blank_error) }
       it { is_expected.to validate_uniqueness_of(:name).case_insensitive.with_message(taken_error) }
     end
-
 
     context 'when expirience' do
       it { is_expected.to validate_numericality_of(:expirience).only_integer }
