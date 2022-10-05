@@ -14,5 +14,14 @@ en:
               confirmation: doesn't match Password
             name:
               taken: has already been taken
+        user:
+          attributes:
+            phone_number:
+              taken: has already been taken
+              invalid: "format is incorrect. Must start with `+` character followed by only digits."
+            password_confirmation:
+              confirmation: doesn't match Password
+            name:
+              taken: has already been taken
 
 
