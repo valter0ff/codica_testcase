@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'homepage#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_for :doctors, skip: [:registrations]
   devise_scope :doctor do
     get 'doctors/edit' => 'devise/registrations#edit', :as => 'edit_doctor_registration'
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
   %w[404 422 500].each do |code|
     match "/#{code}", to: 'errors#show', code:, via: :all
   end
-  resources :doctors, only: %i[index show]
+  resources :doctors, only: %i[index]
 end
