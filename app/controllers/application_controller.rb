@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_all_categories
 
-  devise_group :account, contains: [:doctor] # :user
+  devise_group :account, contains: [:doctor, :user]
 
   unless Rails.env.development?
     rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_token

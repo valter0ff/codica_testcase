@@ -13,10 +13,6 @@ class DoctorsController < ApplicationController
     respond_to :html, :js
   end
 
-  def show
-    @doctor = Doctor.find(params[:id]).decorate
-  end
-
   private
 
   def set_category

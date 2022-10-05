@@ -4,3 +4,6 @@ en:
       short_description: Short description
     index:
       all_categories: All categories
+    doctors_table: 
+      expirience: "Expirience: %{count} years"
+      book_appointment: Book appointment

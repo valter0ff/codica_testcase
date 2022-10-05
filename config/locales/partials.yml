@@ -7,6 +7,13 @@ en:
       home_link: Homepage
       categories_link: Medical specialties
       all_categories: All categories
+      login: Login
       sign_up: Sign up
+      my_account: My account
+      appointments: Appointments
+      profile: Profile
+      log_out: Logout
+      login_as_doctor: Login as doctor
+      login_as_pacient: Login as pacient
     footer:
       company: E-Doctors Company, Inc

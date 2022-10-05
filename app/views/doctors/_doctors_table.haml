@@ -1,18 +1,14 @@
-- doctors.each do |doctor|
-  .col-xs-6.col-sm-3.doctor_card
-    .general-thumb-wrap
-      .thumbnail.general-thumbnail
-        = image_tag doctor.main_image, class: 'img-shadow general-thumbnail-img', alt: 'design-doctor'
-        .thumb-hover
-          .general-thumb-link-wrap
-            = link_to doctor, class: 'thumb-hover-link show-link' do
-              %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
-            -# = link_to doctor_cart_items_path(doctor_id: doctor.id, cart_item: { doctors_count: 1 }),
-            -#     class: 'thumb-hover-link buy-link',
-            -#     method: :post do
-            -#   %i.fa.fa-shopping-cart.thumb-icon
-    .general-thumb-info
-      %p.name= doctor.name
-      %p.font-16.in-gold-500.experience= doctor.expirience
-      %span.divider-sm
-      %p.lead.small.workplace= doctor.workplace
+.col-10
+  - doctors.each do |doctor|
+    .row.doctor_card.my-4.bg-white.py-3.shadow-sm.border.rounded
+      .col-3.d-inline-block
+        = image_tag doctor.main_image, class: 'img-shadow mw-100 general-thumbnail-img', alt: 'design-doctor'
+      .col-9
+        %p.name= doctor.name
+        %p.category= doctor.category.title
+        %p.experience= t('.expirience', count: doctor.expirience) if doctor.expirience
+        %p.description= doctor.description
+        %p.workplace= doctor.workplace
+        %p.worplace-address= doctor.workplace_address
+        - if user_signed_in?
+          =link_to t('.book_appointment'), '#', class: 'btn btn-primary'

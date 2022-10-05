@@ -1,6 +1,7 @@
-%h2.text-center.my-5.text-primary= (@category.title if @category) || t('.all_categories')
+.bg-light.py-5.my-2
+  %h2.text-center.text-primary= (@category.title if @category) || t('.all_categories')
 .mb-4
-  .row#doctors_table
+  .row.justify-content-center.bg-light#doctors_table
     = render 'doctors_table', doctors: @doctors
   - if @pagy.pages > 1
     .text-center#div_next_link
