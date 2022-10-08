@@ -5,34 +5,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip)
 
-gem 'bootsnap', '~> 1.13.0', require: false
-gem 'cssbundling-rails', '~> 1.1.1'
-gem 'jsbundling-rails', '~> 1.0.3'
-gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.4'
-gem 'redis', '~> 4.0'
-gem 'sprockets-rails', '~> 3.4.2'
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-# gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-# gem "stimulus-rails"
-# Use Sass to process CSS
-# gem "sassc-rails"
-# gem "image_processing", "~> 1.2"
-
 gem 'activeadmin', '~> 2.9'
 gem 'activeadmin_addons', '~> 1.9.0'
 gem 'aws-sdk-s3', '~> 1.114.0'
+gem 'bootsnap', '~> 1.13.0', require: false
+gem 'cssbundling-rails', '~> 1.1.1'
 gem 'devise', '~> 4.8.0'
 gem 'draper', '~> 4.0.1'
 gem 'haml', '~> 5.2.2'
 gem 'haml-rails', '~> 2.0.1'
 gem 'image_processing', '~> 1.8'
+gem 'jsbundling-rails', '~> 1.0.3'
 gem 'pagy', '~> 5.10.1'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.4'
+gem 'redis', '~> 4.0'
 gem 'shrine', '~> 3.0'
 gem 'simple_form', '~> 5.1.0'
+gem 'sprockets-rails', '~> 3.4.2'
 
 group :development, :test do
   gem 'apparition', '~> 0.6.0'
