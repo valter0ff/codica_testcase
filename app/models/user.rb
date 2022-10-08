@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, authentication_keys: [:phone_number]
@@ -10,8 +12,8 @@ class User < ApplicationRecord
                                      allow_blank: true,
                                      if: :phone_number_changed? }
   validates :password, presence: { on: :create },
-                      confirmation: { on: :create },
-                      length: { in: Constants::Account::PASSWORD_LENGTH,
-                                if: :encrypted_password_changed? }
+                       confirmation: { on: :create },
+                       length: { in: Constants::Account::PASSWORD_LENGTH,
+                                 if: :encrypted_password_changed? }
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 end
