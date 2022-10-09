@@ -45,6 +45,7 @@ group :development do
   gem 'brakeman', '~> 5.2.1'
   gem 'bundle-audit', '~> 0.1.0'
   gem 'database_consistency', '~> 1.1.12', require: false
+  gem 'haml_lint', require: false
   gem 'i18n-debug', '~> 1.2.0', require: false
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rails_best_practices', '~> 1.23.1'

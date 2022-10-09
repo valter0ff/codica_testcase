@@ -21,24 +21,24 @@
                 aria: {expanded: false, haspopup: true},
                 data: {'bs-toggle': 'dropdown'}, role: 'button',
                 class: 'my-account-link nav-link dropdown-toggle'
-            %ul.dropdown-menu#my-account
-              %li= link_to t('.appointment'), 'appointments_path', class: 'appointments-link dropdown-item'
-              %li= link_to t('.profile'), 'profile_path', class: 'profile-link dropdown-item'
-              %li.divider{role: "separator"}
-              %li= link_to t('.log_out'), destroy_doctor_session_path,
-                data: { turbo_method: :delete }, class: 'log-out-link dropdown-item'
+            %ul.dropdown-menu#doctor-account
+              %li= link_to t('.appointments'), doctors_appointments_path(status: 'active'), class: 'appointments-link dropdown-item'
+              %li= link_to t('.profile'), doctors_profile_path, class: 'profile-link dropdown-item'
+              %li.divider{ role: 'separator' }
+              %li= button_to t('.log_out'), destroy_doctor_session_path,
+                method: :delete, class: 'log-out-link dropdown-item'
         - elsif user_signed_in?
           %li.nav-item.dropdown
             = link_to t('.my_account'), '#',
                 aria: {expanded: false, haspopup: true},
                 data: {'bs-toggle': 'dropdown'}, role: 'button',
                 class: 'my-account-link nav-link dropdown-toggle'
-            %ul.dropdown-menu#my-account
-              %li= link_to t('.appointment'), 'appointments_path', class: 'appointments-link dropdown-item'
+            %ul.dropdown-menu#user-account
+              %li= link_to t('.appointments'), 'appointments_path', class: 'appointments-link dropdown-item'
               %li= link_to t('.profile'), 'profile_path', class: 'profile-link dropdown-item'
               %li.divider{role: "separator"}
-              %li= link_to t('.log_out'), destroy_user_session_path,
-                data: { turbo_method: :delete }, class: 'log-out-link dropdown-item'
+              %li= button_to t('.log_out'), destroy_user_session_path,
+                method: :delete, class: 'log-out-link dropdown-item'
         - else
           %li.nav-item.dropdown
             = link_to t('.login'), '#',
