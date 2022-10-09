@@ -1,0 +1,17 @@
+en:
+  users:
+    registrations:
+      edit:
+        page_title: Edit profile
+        enter_phone_number: Enter phone number
+        enter_name: Enter name
+        enter_old_password: Enter current password
+        enter_new_password: Enter new password
+        password_required: Required only if you wont to change password
+        save: Save
+    profiles:
+      show:
+        phone_number: 'Phone number: '
+        name: 'Name: '
+        edit_profile: Edit profile
+        show_appointments: Show appointments

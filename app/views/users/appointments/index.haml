@@ -1,0 +1,14 @@
+.bg-light.py-5.my-2
+  %h2.text-center.text-primary= t(".#{request.params[:status]}_appointments")
+.mb-4
+  .row.justify-content-md-center
+    .col-10
+      %ul.nav.nav-tabs.justify-content-md-center.nav-fill
+        %li.nav-item
+          = link_to t('.active_appointments'), users_appointments_path(status: 'active'),
+            class: "nav-link #{ 'active' if request.params[:status] == 'active' }", aria: { 'current': 'page' } 
+        %li.nav-item
+          = link_to t('.closed_appointments'), users_appointments_path(status: 'closed'),
+            class: "nav-link #{ 'active' if request.params[:status] == 'closed' }" 
+      = render 'appointment_table'
+      /, appointments: @appointments

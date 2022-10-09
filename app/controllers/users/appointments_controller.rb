@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Doctors
+module Users
   class AppointmentsController < ApplicationController
     def index
       # @appointments = current_doctor.appointments.where(status: params[:status])

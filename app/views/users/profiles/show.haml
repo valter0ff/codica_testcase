@@ -1,0 +1,13 @@
+.row.justify-content-center.bg-light.py-3.my-3
+  .col-10
+    .row.user-card.my-4.bg-white.py-3.shadow-sm.border.rounded
+      .col-9
+        .phone-label.d-flex
+          %p= t('.phone_number') 
+          %span.phone_number.px-2.mx-2= current_user.phone_number
+        .name-label.d-flex
+          %p= t('.name') 
+          %span.name.px-2.mx-2= current_user.name
+    .col-9  
+      = link_to t('.edit_profile'), edit_user_registration_path, class: 'btn btn-primary'
+      = link_to t('.show_appointments'), users_appointments_path, class: 'btn btn-primary'
