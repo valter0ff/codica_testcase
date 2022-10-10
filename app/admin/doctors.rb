@@ -58,4 +58,10 @@ ActiveAdmin.register Doctor do
       end
     end
   end
+
+  controller do
+    def create
+      create! { admin_doctors_url }
+    end
+  end
 end
