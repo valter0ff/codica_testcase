@@ -10,5 +10,4 @@
         %li.nav-item
           = link_to t('.closed_appointments'), users_appointments_path(status: 'closed'),
             class: "nav-link #{ 'active' if request.params[:status] == 'closed' }" 
-      = render 'appointment_table'
-      /, appointments: @appointments
+      = render 'appointments_table', appointments: @appointments

@@ -10,4 +10,4 @@
           %span.name.px-2.mx-2= current_user.name
     .col-9  
       = link_to t('.edit_profile'), edit_user_registration_path, class: 'btn btn-primary'
-      = link_to t('.show_appointments'), users_appointments_path, class: 'btn btn-primary'
+      = link_to t('.show_appointments'), users_appointments_path(status: 'active'), class: 'btn btn-primary'

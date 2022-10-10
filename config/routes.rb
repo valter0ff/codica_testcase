@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   authenticate :user do
     namespace :users do
-      resources :appointments, only: %i[index show]
+      resources :appointments, only: %i[index show create]
       resource :profile, only: %i[show]
     end
   end
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   authenticate :doctor do
     namespace :doctors do
-      resources :appointments, only: %i[index show]
+      resources :appointments, only: %i[index show edit update]
       resource :profile, only: %i[show]
     end
   end

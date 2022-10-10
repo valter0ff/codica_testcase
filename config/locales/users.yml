@@ -15,3 +15,20 @@ en:
         name: 'Name: '
         edit_profile: Edit profile
         show_appointments: Show appointments
+    appointments:
+      create:
+        appointment_exists: You already have active appointment to this doctor
+        appointment_created: Appointment successfully created
+      index:
+        active_appointments: Active appointments
+        closed_appointments: Closed appointments
+      show:
+        appointment_to: "Appointment to %{name}"
+        prescription: Prescription
+        back: Back
+      appointments_table:
+        number: Number
+        doctor_name: Doctor name
+        created_date: Created at date
+        action: Action
+        show_prescription: Show a prescription

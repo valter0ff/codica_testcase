@@ -10,3 +10,7 @@
     %p.description= doctor.description
     %p.workplace= doctor.workplace
     %p.workplace-address= doctor.workplace_address
+    - if user_signed_in?
+      = button_to t('.book_appointment'), users_appointments_path(doctor_id: doctor.id),
+        class: 'btn btn-primary'
+
