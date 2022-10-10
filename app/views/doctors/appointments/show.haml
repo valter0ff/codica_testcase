@@ -1,0 +1,13 @@
+.bg-light.py-5.my-2
+  %h2.text-center.text-primary= t('.appointment_for', name: @appointment.user.name)
+.row.justify-content-center.bg-light.py-3.my-3
+  .col-10
+    .row
+      .col-12.text-center
+        %h3= t('.prescription')
+    .row.appointment-card.my-4.bg-white.py-3.shadow-sm.border.rounded
+      .col-9
+        .prescription-label.d-flex
+          %p= @appointment.body
+    .col-12.text-center
+      = link_to t('.back'), :back, class: 'btn btn-primary'

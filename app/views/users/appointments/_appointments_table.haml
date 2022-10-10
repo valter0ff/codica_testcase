@@ -1,0 +1,16 @@
+%table.table
+  %thead
+    %tr
+      %th{scope: "col"}= t('.number')
+      %th{scope: "col"}= t('.doctor_name')
+      %th{scope: "col"}= t('.created_date')
+      - if request.params[:status] == 'closed' 
+        %th{scope: "col"}= t('.action')
+  %tbody
+    - appointments.each do |appointment|
+      %tr
+        %th{scope: "row"}= appointment.id
+        %td= appointment.doctor.name
+        %td= appointment.created_at.strftime('%R %B %d, %Y')
+        - if request.params[:status] == 'closed' 
+          %td= link_to 'Show a prescription', users_appointment_path(appointment), class: 'btn btn-link'

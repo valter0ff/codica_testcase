@@ -1,0 +1,6 @@
+en:
+  appointments:
+    create:
+      appointment_exists: You already have active appointment to this doctor
+      appointment_created: Appointment successfully created
+    
