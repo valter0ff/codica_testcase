@@ -29,7 +29,7 @@ module Users
     end
 
     def appointments_count_reached?
-      find_doctor!.appointments.count >= Constants::Shared::MAX_DOCTOR_APPOINTMENT_COUNT
+      find_doctor!.appointments.active.count >= Constants::Shared::MAX_DOCTOR_APPOINTMENT_COUNT
     end
       
     def find_doctor!

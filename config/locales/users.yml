@@ -19,6 +19,7 @@ en:
       create:
         appointment_exists: You already have active appointment to this doctor
         appointment_created: Appointment successfully created
+        appointments_count_reached: This doctor has maximum count of active appointments
       index:
         active_appointments: Active appointments
         closed_appointments: Closed appointments
