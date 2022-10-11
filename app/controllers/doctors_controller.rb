@@ -1,16 +1,11 @@
 # frozen_string_literal: true
 
 class DoctorsController < ApplicationController
-  include Pagy::Backend
-
-  ITEMS_PER_PAGE = 12
-
   before_action :set_category, only: :index
 
   def index
-    @doctors = filtered_doctors.decorate
-    @pagy, @doctors = pagy_array(@doctors.to_a, items: ITEMS_PER_PAGE, link_extra: 'data-remote="true"')
-    respond_to :html, :js
+    @pagy, @doctors = pagy(filtered_doctors, items: Constants::Shared::ITEMS_PER_PAGE)
+    @doctors = @doctors.decorate
   end
 
   private

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   before_action :set_all_categories
 
   devise_group :account, contains: %i[doctor user]

@@ -6,6 +6,7 @@ module Doctors
 
     def index
       @appointments = current_doctor.appointments.where(status: params[:status])
+      @pagy, @appointments = pagy(@appointments, items: Constants::Shared::ITEMS_PER_PAGE)
     end
 
     def show; end
