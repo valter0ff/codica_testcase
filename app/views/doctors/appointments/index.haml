@@ -11,3 +11,6 @@
           = link_to t('.closed_appointments'), doctors_appointments_path(status: 'closed'),
             class: "nav-link #{ 'active' if request.params[:status] == 'closed' }" 
       = render 'appointments_table', appointments: @appointments
+    .col-10.text-center
+      = link_to t('.back'), :back, class: 'btn btn-primary'
+
