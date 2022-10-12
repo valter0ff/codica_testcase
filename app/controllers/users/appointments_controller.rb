@@ -10,9 +10,9 @@ module Users
     def show
       @appointment = current_user.appointments.find(params[:id])
     end
-  
+
     def create
-      if find_active_appointment.present?
+      if active_appointment_exists?
         redirect_back_or_to doctors_path, alert: t('.appointment_exists')
       elsif appointments_count_reached?
         redirect_back_or_to doctors_path, alert: t('.appointments_count_reached')
@@ -25,14 +25,14 @@ module Users
 
     private
 
-    def find_active_appointment
-      current_user.appointments.where(doctor_id: params[:doctor_id]).active
+    def active_appointment_exists?
+      current_user.appointments.where(doctor_id: params[:doctor_id]).active.present?
     end
 
     def appointments_count_reached?
       find_doctor!.appointments.active.count >= Constants::Shared::MAX_DOCTOR_APPOINTMENT_COUNT
     end
-      
+
     def find_doctor!
       Doctor.find(params[:doctor_id])
     end

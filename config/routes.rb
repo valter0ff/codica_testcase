@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   authenticate :doctor do
     namespace :doctors do
       resources :appointments, only: %i[index show edit update]
+      resources :pacients, only: %i[index show]
       resource :profile, only: %i[show]
     end
   end

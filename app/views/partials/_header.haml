@@ -22,6 +22,7 @@
                 data: {'bs-toggle': 'dropdown'}, role: 'button',
                 class: 'my-account-link nav-link dropdown-toggle'
             %ul.dropdown-menu#doctor-account
+              %li= link_to t('.pacients'), doctors_pacients_path, class: 'pacients-link dropdown-item'
               %li= link_to t('.appointments'), doctors_appointments_path(status: 'active'), class: 'appointments-link dropdown-item'
               %li= link_to t('.profile'), doctors_profile_path, class: 'profile-link dropdown-item'
               %li.divider{ role: 'separator' }

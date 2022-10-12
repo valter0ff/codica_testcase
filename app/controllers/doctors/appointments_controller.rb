@@ -23,13 +23,13 @@ module Doctors
         render :edit, status: :unprocessable_entity
       end
     end
-  
+
     private
-  
+
     def set_appointment!
       @appointment = current_doctor.appointments.find(params[:id])
     end
-  
+
     def permitted_params
       params.require(:appointment).permit(:body)
     end

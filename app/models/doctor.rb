@@ -20,6 +20,6 @@ class Doctor < ApplicationRecord
   validates :expirience, numericality: { only_integer: true }
 
   belongs_to :category
-  has_many :appointments
-  has_many :users, through: :appointments
+  has_many :appointments, dependent: :destroy
+  has_many :pacients, through: :appointments, source: :user
 end
