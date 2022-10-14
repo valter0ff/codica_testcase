@@ -9,6 +9,7 @@ gem 'activeadmin', '~> 2.9'
 gem 'activeadmin_addons', '~> 1.9.0'
 gem 'aws-sdk-s3', '~> 1.114.0'
 gem 'bootsnap', '~> 1.13.0', require: false
+gem 'cancancan', '~> 3.4.0'
 gem 'cssbundling-rails', '~> 1.1.1'
 gem 'devise', '~> 4.8.0'
 gem 'draper', '~> 4.0.1'
@@ -45,12 +46,12 @@ group :development do
   gem 'brakeman', '~> 5.2.1'
   gem 'bundle-audit', '~> 0.1.0'
   gem 'database_consistency', '~> 1.1.12', require: false
-  gem 'haml_lint', require: false
+  gem 'haml_lint', '~> 0.42.0', require: false
   gem 'i18n-debug', '~> 1.2.0', require: false
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rails_best_practices', '~> 1.23.1'
   gem 'rails_db', '>= 2.3.1'
-  gem 'solargraph'
+  gem 'solargraph', '~> 0.46.0'
   gem 'table_print', '~>1.5.7'
   gem 'web-console', '~> 4.2.0'
 end

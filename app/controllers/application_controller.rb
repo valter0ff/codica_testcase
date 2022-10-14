@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     rescue_from ActionController::RoutingError, with: :not_found
     rescue_from AbstractController::ActionNotFound, with: :not_found
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    rescue_from CanCan::AccessDenied do |exception|
+      redirect_to root_path, alert: exception.message
+    end
+    
   end
 
   private
@@ -31,5 +35,13 @@ class ApplicationController < ActionController::Base
 
   def internal_error
     redirect_to '/500'
+  end
+
+  def current_ability
+    @current_ability ||= case
+    when doctor_signed_in? then DoctorAbility.new(current_doctor)
+    when user_signed_in? then UserAbility.new(current_user)
+    else BaseAbility.new(User.new)
+    end
   end
 end

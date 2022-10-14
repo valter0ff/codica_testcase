@@ -133,6 +133,7 @@ GEM
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
     byebug (11.1.3)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -535,6 +536,7 @@ DEPENDENCIES
   bootsnap (~> 1.13.0)
   brakeman (~> 5.2.1)
   bundle-audit (~> 0.1.0)
+  cancancan (~> 3.4.0)
   capybara (>= 3.26)
   capybara-screenshot (~> 1.0.26)
   cssbundling-rails (~> 1.1.1)
@@ -546,7 +548,7 @@ DEPENDENCIES
   ffaker (~> 2.18)
   haml (~> 5.2.2)
   haml-rails (~> 2.0.1)
-  haml_lint
+  haml_lint (~> 0.42.0)
   i18n-debug (~> 1.2.0)
   image_processing (~> 1.8)
   jsbundling-rails (~> 1.0.3)
@@ -573,7 +575,7 @@ DEPENDENCIES
   simple_form (~> 5.1.0)
   simplecov (~> 0.21.2)
   site_prism (~> 3.7.3)
-  solargraph
+  solargraph (~> 0.46.0)
   sprockets-rails (~> 3.4.2)
   table_print (~> 1.5.7)
   web-console (~> 4.2.0)
