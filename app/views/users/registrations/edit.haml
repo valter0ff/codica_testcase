@@ -29,4 +29,5 @@
                             class: 'form-control', placeholder: t('.password_required'), type: 'password'
             = f.full_error :password, class: 'text-danger'
           .col-8.text-center
+            = link_to t('.back'), :back, class: 'btn btn-primary'
             = f.submit t('.save'), class: 'btn btn-primary mb-35 save-btn'
