@@ -3,7 +3,7 @@
 class DoctorsController < ApplicationController
   before_action :set_category, only: :index
   authorize_resource
-  
+
   def index
     @pagy, @doctors = pagy(filtered_doctors, items: Constants::Shared::ITEMS_PER_PAGE)
     @doctors = @doctors.decorate

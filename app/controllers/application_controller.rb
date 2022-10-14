@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     rescue_from CanCan::AccessDenied do |exception|
       redirect_to root_path, alert: exception.message
     end
-    
+
   end
 
   private
@@ -38,10 +38,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_ability
-    @current_ability ||= case
-    when doctor_signed_in? then DoctorAbility.new(current_doctor)
-    when user_signed_in? then UserAbility.new(current_user)
-    else BaseAbility.new(User.new)
-    end
+    @current_ability ||= if doctor_signed_in?
+                           DoctorAbility.new(current_doctor)
+                         elsif user_signed_in?
+                           UserAbility.new(current_user)
+                         else
+                           BaseAbility.new(User.new)
+                         end
   end
 end
