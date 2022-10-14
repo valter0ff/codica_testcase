@@ -2,6 +2,8 @@
 
 module Users
   class ProfilesController < ApplicationController
-    def show; end
+    def show
+      authorize! :read, current_user
+    end
   end
 end

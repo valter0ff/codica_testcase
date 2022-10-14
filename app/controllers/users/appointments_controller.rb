@@ -2,6 +2,8 @@
 
 module Users
   class AppointmentsController < ApplicationController
+    authorize_resource
+
     def index
       @appointments = current_user.appointments.where(status: params[:status])
       @pagy, @appointments = pagy(@appointments, items: Constants::Shared::ITEMS_PER_PAGE)
