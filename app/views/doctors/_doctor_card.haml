@@ -5,7 +5,7 @@
     - if doctor_signed_in? && doctor == current_doctor
       %p.phone_number= doctor.phone_number
     %p.name= doctor.name
-    %p.category= link_to "#{doctor.category.title}", doctors_path(category_id: doctor.category.id), class: 'btn btn-link'
+    %p.category= link_to "#{doctor.category.title}", doctors_path(category_id: doctor.category.id), class: 'btn-link'
     %p.experience= t('.expirience', count: doctor.expirience) if doctor.expirience
     %p.description= doctor.description
     %p.workplace= doctor.workplace

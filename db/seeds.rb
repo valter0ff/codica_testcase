@@ -7,8 +7,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-['Allergy and immunology', 'Dermatology', 'Otolaryngology', 'Neurology', 'Gastroenterology', 'Gynecology', 'Ophthalmology', 'Pediatrics', 'Surgery', 'Urology', 'Cardiology'].each do |cat|
-  FactoryBot.create(:category, title: cat, :with_doctors, doctors_count: 5)
+I18n.t('categories_titles').each do |title|
+  FactoryBot.create(:category, title: title, :with_doctors, doctors_count: 5)
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+FactoryBot.create_list(:user, 10)
+
+30.times do 
+  FactoryBot.create(:appointment, user: User.order('RANDOM()').take, doctor: Doctor.order('RANDOM()').take)
+end
+
+30.times do 
+  FactoryBot.create(:appointment, :closed, user: User.order('RANDOM()').take, doctor: Doctor.order('RANDOM()').take)
+end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

@@ -4,7 +4,10 @@ FactoryBot.define do
   factory :appointment do
     user
     doctor
-    status { :active }
-    body { FFaker::Lorem.paragraph }
+
+    trait :closed do
+      body { FFaker::Lorem.paragraph }
+      status { :closed }
+    end
   end
 end
