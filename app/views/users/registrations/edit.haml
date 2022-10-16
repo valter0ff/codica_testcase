@@ -9,12 +9,14 @@
           .col-8
             = f.label :phone_number, t('.enter_phone_number'), class: 'form-label phone-number-label'
             = f.input_field :phone_number, autocomplete: 'phone_number',
-                            id: 'phone_number', class: 'form-control', placeholder: t('.enter_phone_number')
+                            id: 'phone_number', class: 'form-control', placeholder: t('.enter_phone_number'),
+                            required: true
             = f.full_error :phone_number, class: 'text-danger'
           .col-8
             = f.label :name, t('.enter_name'), class: 'form-label name-label'
             = f.input_field :name, autocomplete: 'name', id: 'name',
-                            class: 'form-control', placeholder: t('.enter_name')
+                            class: 'form-control', placeholder: t('.enter_name'),
+                            input_html: { required: true }
             = f.full_error :name, class: 'text-danger'
           .col-8
             = f.label :current_password, t('.enter_old_password'),

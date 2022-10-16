@@ -2,6 +2,9 @@
 
 module Doctors
   class PacientsController < ApplicationController
+    authorize_resource class: false
+    authorize_resource class: 'Appointment'
+
     def index
       @pagy, @pacients = pagy(current_doctor.pacients, items: Constants::Shared::ITEMS_PER_PAGE)
     end

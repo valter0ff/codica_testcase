@@ -8,5 +8,6 @@ class DoctorAbility < BaseAbility
     can :read, User, appointment: { doctor: user }
     can :read, Appointment, doctor: user
     can :update, Appointment, doctor: user, status: :active
+    can :read, :pacient
   end
 end
