@@ -9,7 +9,7 @@ RSpec.describe 'Homepages', type: :request do
     it { is_expected.to render_template(:index) }
 
     it 'has a 200 status code' do
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'assigns all categories to @categories' do
