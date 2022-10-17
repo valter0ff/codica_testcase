@@ -16,11 +16,11 @@ module Doctors
     end
 
     def configure_permitted_parameters
-      keys = %i[phone_number name password current_password image expirience description workplace workplace_address]
-      devise_parameter_sanitizer.permit(:account_update, keys: keys)
+      allowed = %i[phone_number name password current_password image expirience description workplace workplace_address]
+      devise_parameter_sanitizer.permit(:account_update, keys: allowed)
     end
 
-    def after_update_path_for(resource)
+    def after_update_path_for(_resource)
       doctors_profile_path
     end
   end

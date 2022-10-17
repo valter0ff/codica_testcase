@@ -7,14 +7,51 @@ en:
     doctor_card: 
       expirience: "Expirience: %{count} years"
       book_appointment: Book appointment
+    pacients:
+      index:
+        pacients: Pacients
+        show: Show
+      pacients_table:
+        pacient_name: Pacient name
+        action: Action
+      show:
+        pacient_card: "Card of pacient %{name}"
+      pacient_appointments:
+        active: Active
+        closed: Closed
+        number: Number
+        status: Status
+        created_date: Created at date
+        action: Action
+        give_prescription: Give a prescription
+        show_prescription: Show a prescription
     appointments:
       index:
         active_appointments: Active appointments
         closed_appointments: Closed appointments
+      edit:
+        appointment_for: "Appointment for %{name}"
+        enter_prescription: Enter prescription
+        save: Save
+      update:
+        update_restricted: You cann't edit closed appointments
+        appointment_updated: Appointment successfully updated
+      show:
+        appointment_for: "Appointment for %{name}"
+        prescription: Prescription
+        back: Back
+      appointments_table:
+        number: Number
+        pacient_name: Pacient name
+        created_date: Created at date
+        action: Action
+        give_prescription: Give a prescription
+        show_prescription: Show a prescription
     profiles:
       show:
         edit_profile: Edit profile
         show_appointments: Show appointments
+        show_pacients: Show pacients
     registrations:
       edit:
         page_title: Edit profile

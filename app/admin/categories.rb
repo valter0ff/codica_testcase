@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Category do
-  controller { skip_before_action :set_all_categories }
+  decorate_with CategoryDecorator
 
   config.sort_order = 'id_asc'
 
@@ -15,6 +15,7 @@ ActiveAdmin.register Category do
     end
     column :title
     column :created_at
+    column :doctors, &:clickable_doctors
     actions
   end
 
@@ -34,6 +35,15 @@ ActiveAdmin.register Category do
       row :image do |category|
         image_tag(category.image_url(:small), size: '50') if category.image
       end
+      row :doctors, &:clickable_doctors
+    end
+  end
+
+  controller do
+    skip_before_action :set_all_categories
+
+    def create
+      create! { admin_categories_url }
     end
   end
 end

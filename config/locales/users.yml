@@ -1,0 +1,35 @@
+en:
+  users:
+    registrations:
+      edit:
+        page_title: Edit profile
+        enter_phone_number: Enter phone number
+        enter_name: Enter name
+        enter_old_password: Enter current password
+        enter_new_password: Enter new password
+        password_required: Required only if you wont to change password
+        save: Save
+    profiles:
+      show:
+        phone_number: 'Phone number: '
+        name: 'Name: '
+        edit_profile: Edit profile
+        show_appointments: Show appointments
+    appointments:
+      create:
+        appointment_exists: You already have active appointment to this doctor
+        appointment_created: Appointment successfully created
+        appointments_count_reached: This doctor has maximum count of active appointments
+      index:
+        active_appointments: Active appointments
+        closed_appointments: Closed appointments
+      show:
+        appointment_to: "Appointment to %{name}"
+        prescription: Prescription
+        back: Back
+      appointments_table:
+        number: Number
+        doctor_name: Doctor name
+        created_date: Created at date
+        action: Action
+        show_prescription: Show a prescription

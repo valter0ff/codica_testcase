@@ -1,0 +1,14 @@
+.bg-light.py-5.my-2
+  %h2.text-center.text-primary= t('.appointment_for', name: @appointment.user.name)
+.mb-4
+  .row
+    .col-12
+      = simple_form_for @appointment, url: doctors_appointment_path(@appointment), class: 'general-form-md' do |f|
+        .row.g-4.justify-content-md-center
+          .col-8
+            = f.label :body, t('.enter_prescription'), class: 'form-label prescription-label'
+            = f.input_field :body, as: :text, autocomplete: 'body',
+                            id: 'body', class: 'form-control', placeholder: t('.enter_prescription')
+            = f.full_error :body, class: 'text-danger'
+          .col-8.text-center
+            = f.submit t('.save'), class: 'btn btn-primary mb-35 save-btn'

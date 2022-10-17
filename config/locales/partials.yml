@@ -10,6 +10,7 @@ en:
       login: Login
       sign_up: Sign up
       my_account: My account
+      pacients: Pacients
       appointments: Appointments
       profile: Profile
       log_out: Logout

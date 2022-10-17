@@ -16,4 +16,7 @@ class User < ApplicationRecord
                        length: { in: Constants::Account::PASSWORD_LENGTH,
                                  if: :encrypted_password_changed? }
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  has_many :appointments, dependent: :destroy
+  has_many :doctors, through: :appointments
 end

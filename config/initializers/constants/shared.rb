@@ -3,5 +3,7 @@
 module Constants
   module Shared
     HOMEPAGE_CATEGORIES_COUNT = 6
+    MAX_DOCTOR_APPOINTMENT_COUNT = 10
+    ITEMS_PER_PAGE = 10
   end
 end

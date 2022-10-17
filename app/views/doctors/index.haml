@@ -6,8 +6,5 @@
     .col-10
       - @doctors.each do |doctor|
         = render 'doctors/doctor_card', doctor: doctor
-        - if user_signed_in?
-          =link_to t('.book_appointment'), '#', class: 'btn btn-primary'
-  - if @pagy.pages > 1
-    .text-center#div_next_link
-      = render 'next_page_button', pagy: @pagy
+    .col-10.justify-content-center.pagination
+      != pagy_bootstrap_nav @pagy

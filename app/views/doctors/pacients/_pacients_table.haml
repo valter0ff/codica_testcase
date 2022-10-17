@@ -1,0 +1,10 @@
+%table.table
+  %thead
+    %tr
+      %th{scope: "col"}= t('.pacient_name')
+      %th{scope: "col"}= t('.action')
+  %tbody
+    - pacients.each do |pacient|
+      %tr
+        %td{scope: "row"}= pacient.name
+        %td= link_to t('.show'), doctors_pacient_path(pacient), class: 'btn btn-link'

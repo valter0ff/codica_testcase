@@ -7,8 +7,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-['Allergy and immunology', 'Dermatology', 'Otolaryngology', 'Neurology', 'Gastroenterology', 'Gynecology', 'Ophthalmology', 'Pediatrics', 'Surgery', 'Urology', 'Cardiology'].each do |spec|
-  Category.create(title: spec)
+['Allergy and immunology', 'Dermatology', 'Otolaryngology', 'Neurology', 'Gastroenterology', 'Gynecology', 'Ophthalmology', 'Pediatrics', 'Surgery', 'Urology', 'Cardiology'].each do |cat|
+  FactoryBot.create(:category, title: cat, :with_doctors, doctors_count: 5)
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
