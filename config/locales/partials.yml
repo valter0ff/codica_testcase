@@ -13,7 +13,7 @@ en:
       pacients: Pacients
       appointments: Appointments
       profile: Profile
-      log_out: Logout
+      logout: Logout
       login_as_doctor: Login as doctor
       login_as_pacient: Login as pacient
     footer:
