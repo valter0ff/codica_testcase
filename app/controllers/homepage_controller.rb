@@ -2,6 +2,6 @@
 
 class HomepageController < ApplicationController
   def index
-    @categories = Category.limit(Constants::Shared::HOMEPAGE_CATEGORIES_COUNT)
+    @categories_line = @categories.limit(Constants::Shared::HOMEPAGE_CATEGORIES_COUNT)
   end
 end

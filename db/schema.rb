@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_19_000932) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_145829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,4 +48,34 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_000932) do
     t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
+  create_table "doctors", force: :cascade do |t|
+    t.string "phone_number", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name", default: "", null: false
+    t.integer "expirience", default: 0, null: false
+    t.string "description"
+    t.string "workplace"
+    t.string "workplace_address"
+    t.datetime "remember_created_at"
+    t.text "image_data"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_doctors_on_category_id"
+    t.index ["name"], name: "index_doctors_on_name", unique: true
+    t.index ["phone_number"], name: "index_doctors_on_phone_number", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "phone_number", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name", default: "", null: false
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
+  end
+
+  add_foreign_key "doctors", "categories"
 end

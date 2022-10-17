@@ -1,0 +1,28 @@
+.text-center.p-5.my-4.bg-light.rounded-3.shadow-sm
+  .form-signin.w-100.m-auto
+    =image_tag 'logo.png', class: 'mb-4', size: '80'
+    %h1.h3.mb-3.fw-normal.page_title= t('.sign_up')
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f|
+      .form-floating
+        = f.input_field :phone_number, autofocus: true, autocomplete: 'phone_number', id: 'phone_number',
+                            class: 'form-control', placeholder: t('.phone_number'), type: 'phone-number'
+        = f.label :phone_number, t('.phone_number'), class: 'form-label phone-number-label'
+        = f.full_error :phone_number, class: 'text-danger'
+      .form-floating
+        = f.input_field :name, autofocus: true, autocomplete: 'name', id: 'name',
+                            class: 'form-control form-signup-field', placeholder: t('.name'), type: 'name'
+        = f.label :name, t('.name'), class: 'form-label name-label'
+        = f.full_error :name, class: 'text-danger'
+      .form-floating
+        = f.input_field :password, autocomplete: 'new-password', id: 'password',
+                        class: 'form-control form-signup-field', placeholder: t('.password'), type: 'password'
+        = f.label :password, t('.password'), class: 'form-label password-label'
+        = f.full_error :password, class: 'text-danger'
+      .form-floating
+        = f.input_field :password_confirmation, autocomplete: 'new-password', id: 'password-confirmation',
+                        class: 'form-control form-signin-password', placeholder: t('.password_confirmation'), type: 'password'
+        = f.label :password_confirmation, t('.password_confirmation'), class: 'form-label password-confirmation-label'
+        = f.full_error :password_confirmation, class: 'text-danger'
+      .form-actions.mb-3
+        = f.submit t('.sign_up'), class: 'w-100 btn btn-lg btn-primary'
+  = render "devise/shared/links"

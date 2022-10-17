@@ -1,0 +1,32 @@
+en:
+  doctors:
+    admin:
+      short_description: Short description
+    index:
+      all_categories: All categories
+    doctor_card: 
+      expirience: "Expirience: %{count} years"
+      book_appointment: Book appointment
+    appointments:
+      index:
+        active_appointments: Active appointments
+        closed_appointments: Closed appointments
+    profiles:
+      show:
+        edit_profile: Edit profile
+        show_appointments: Show appointments
+    registrations:
+      edit:
+        page_title: Edit profile
+        select_avatar: Select avatar
+        enter_phone_number: Enter phone number
+        enter_name: Enter name
+        enter_expirience: Enter expirirence (digits only allowed)
+        enter_description: Enter description
+        enter_workplace: Enter workplace
+        enter_workplace_address: Enter workplace address
+        enter_old_password: Enter old password
+        enter_new_password: Enter new password
+        password_required: Required only if you wont to change password
+        save: Save
+

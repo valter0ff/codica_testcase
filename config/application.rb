@@ -33,7 +33,7 @@ module CodicaTestcase
     config.time_zone = 'Kyiv'
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
 
     config.generators do |g|
       g.helper false

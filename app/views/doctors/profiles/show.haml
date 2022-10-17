@@ -1,0 +1,6 @@
+.row.justify-content-center.bg-light.py-3.my-3
+  .col-10
+    = render 'doctors/doctor_card', doctor: current_doctor.decorate
+    - if doctor_signed_in?
+      = link_to t('.edit_profile'), edit_doctor_registration_path, class: 'btn btn-primary'
+      = link_to t('.show_appointments'), doctors_appointments_path, class: 'btn btn-primary'
