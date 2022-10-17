@@ -2,7 +2,8 @@
 
 module Doctors
   class PacientsController < ApplicationController
-    # before_action :set_appointment!, except: :index
+    authorize_resource class: false
+    authorize_resource class: 'Appointment'
 
     def index
       @pagy, @pacients = pagy(current_doctor.pacients, items: Constants::Shared::ITEMS_PER_PAGE)

@@ -1,0 +1,7 @@
+en:
+  unauthorized:
+    manage:
+      all: "Not authorized to %{action} %{subject}."
+    edit:
+      appointment: Not allowed to edit closed appointment
+

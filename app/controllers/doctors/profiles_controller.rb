@@ -2,6 +2,8 @@
 
 module Doctors
   class ProfilesController < ApplicationController
-    def show; end
+    def show
+      authorize! :read, current_doctor
+    end
   end
 end

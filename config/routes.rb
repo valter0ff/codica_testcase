@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
   %w[404 422 500].each do |code|
-    match "/#{code}", to: 'errors#show', code:, via: :all
+    match "/#{code}", to: 'errors#show', code: code, via: :all
   end
   resources :doctors, only: %i[index]
 end

@@ -3,6 +3,7 @@
 module Doctors
   class AppointmentsController < ApplicationController
     before_action :set_appointment!, except: :index
+    authorize_resource
 
     def index
       @appointments = current_doctor.appointments.where(status: params[:status])
@@ -14,9 +15,7 @@ module Doctors
     def edit; end
 
     def update
-      if @appointment.closed?
-        redirect_to appointment_path(@appointment), alert: t('.update_restricted')
-      elsif @appointment.update(permitted_params)
+      if @appointment.update(permitted_params)
         @appointment.closed!
         redirect_to doctors_appointments_path(status: 'closed'), notice: t('.appointment_updated')
       else

@@ -17,7 +17,7 @@
               %li= link_to "#{category.title}", doctors_path(category_id: category.id), class: 'dropdown-item'
         - if doctor_signed_in?
           %li.nav-item.dropdown
-            = link_to t('.my_account'), '#',
+            = link_to current_account.name, '#',
                 aria: {expanded: false, haspopup: true},
                 data: {'bs-toggle': 'dropdown'}, role: 'button',
                 class: 'my-account-link nav-link dropdown-toggle'
@@ -30,7 +30,7 @@
                 method: :delete, class: 'log-out-link dropdown-item'
         - elsif user_signed_in?
           %li.nav-item.dropdown
-            = link_to t('.my_account'), '#',
+            = link_to current_account.name, '#',
                 aria: {expanded: false, haspopup: true},
                 data: {'bs-toggle': 'dropdown'}, role: 'button',
                 class: 'my-account-link nav-link dropdown-toggle'
