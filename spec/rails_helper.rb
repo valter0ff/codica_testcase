@@ -4,7 +4,7 @@ require 'simplecov'
 
 SimpleCov.start 'rails' do
   add_filter ['app/jobs', 'app/mailers']
-  minimum_coverage 80
+  minimum_coverage 30 # 80
 end
 
 require 'spec_helper'
@@ -30,4 +30,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include Rails.application.routes.url_helpers, type: :request
+  config.include ActionDispatch::Integration::RequestHelpers
 end

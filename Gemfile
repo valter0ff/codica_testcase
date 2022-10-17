@@ -57,7 +57,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 3.26'
+  gem 'capybara', '>= 3.37'
   gem 'capybara-screenshot', '~> 1.0.26'
   gem 'cuprite', '~> 0.13'
   gem 'rack_session_access', '~> 0.2.0'

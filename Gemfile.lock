@@ -374,7 +374,7 @@ GEM
       activesupport (>= 6.1.5)
       i18n
     redis (4.8.0)
-    regexp_parser (2.5.0)
+    regexp_parser (2.6.0)
     request_store (1.5.1)
       rack (>= 1.4)
     require_all (3.0.0)
@@ -537,7 +537,7 @@ DEPENDENCIES
   brakeman (~> 5.2.1)
   bundle-audit (~> 0.1.0)
   cancancan (~> 3.4.0)
-  capybara (>= 3.26)
+  capybara (>= 3.37)
   capybara-screenshot (~> 1.0.26)
   cssbundling-rails (~> 1.1.1)
   cuprite (~> 0.13)
