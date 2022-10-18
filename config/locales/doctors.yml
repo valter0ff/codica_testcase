@@ -34,6 +34,7 @@ en:
         appointment_for: "Appointment for %{name}"
         enter_prescription: Enter prescription
         save: Save
+        back: Back
       update:
         appointment_updated: Appointment successfully updated
       show:
