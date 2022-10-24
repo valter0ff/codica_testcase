@@ -10,7 +10,7 @@ module Users
     end
 
     def show
-      @appointment = current_user.appointments.find(params[:id])
+      @appointment = current_user.appointments.closed.find(params[:id])
     end
 
     def create
