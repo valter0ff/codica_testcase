@@ -98,7 +98,7 @@ RSpec.describe 'Users::Appointments', type: :request do
         expect(response).to redirect_to(users_appointments_path(status: 'active'))
       end
 
-      it 'renders index template' do \
+      it 'renders index template' do
         follow_redirect!
         expect(response).to render_template(:index)
       end
@@ -135,6 +135,29 @@ RSpec.describe 'Users::Appointments', type: :request do
       it 'sets flash alert message' do
         expect(flash[:alert]).to eq(I18n.t('users.appointments.create.appointments_count_reached'))
       end
+    end
+  end
+
+  describe 'sign in and create appointment' do
+    before { create(:doctor) }
+
+    it 'signs in, creates appointment and redirect to user`s appointments page' do
+      get '/users/sign_in'
+      expect(response).to render_template(:new)
+
+      post '/users/sign_in', params: { user: { phone_number: user.phone_number, password: user.password } }
+      expect(response).to redirect_to(root_path)
+      follow_redirect!
+
+      get '/doctors'
+      expect(response).to render_template(:index)
+
+      post '/users/appointments', params: { doctor_id: Doctor.first.id }
+      expect(response).to redirect_to(users_appointments_path(status: 'active'))
+      follow_redirect!
+
+      expect(response).to render_template(:index)
+      expect(response.body).to include(I18n.t('users.appointments.create.appointment_created'))
     end
   end
 end
