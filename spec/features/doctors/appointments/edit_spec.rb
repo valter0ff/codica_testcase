@@ -29,14 +29,14 @@ RSpec.describe 'Doctors::Appointments->Edit', type: :feature do
   end
 
   describe 'submitting form' do
-    before { form.fill_and_submit(params) }
+    before { |example| form.fill_and_submit(params) unless example.metadata[:skip_before] }
 
     context 'with prescription field correct data' do
       let(:params) { attributes_for(:appointment, :closed) }
       let(:success_message) { I18n.t('doctors.appointments.update.appointment_updated') }
 
-      it 'updates appointment`s prescription' do
-        expect(appointment.reload.body).to eq(params[:body])
+      it 'updates appointment`s prescription', skip_before: true do
+        expect { form.fill_and_submit(params) }.to change { appointment.reload.body }.from(nil).to(params[:body])
       end
 
       it 'redirects to doctor`s closed appointments page' do
