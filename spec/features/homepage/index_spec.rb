@@ -107,11 +107,5 @@ RSpec.describe 'HomePages->Index', type: :feature do
         expect(account_menu_block.profile_link['href']).to eq(users_profile_path)
       end
     end
-    # context 'when `Get started` button clicked' do
-    #   it 'redirects to catalog page' do
-    #     home_page.get_started_btn.click
-    #     expect(page).to have_current_path('/books')
-    #   end
-    # end
   end
 end
