@@ -8,16 +8,16 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 I18n.t('categories_titles').each do |title|
-  FactoryBot.create(:category, title: title, :with_doctors, doctors_count: 5)
+  FactoryBot.create(:category, :with_doctors, title: title,  doctors_count: 5)
 end
 
 FactoryBot.create_list(:user, 10)
 
-30.times do 
+30.times do
   FactoryBot.create(:appointment, user: User.order('RANDOM()').take, doctor: Doctor.order('RANDOM()').take)
 end
 
-30.times do 
+30.times do
   FactoryBot.create(:appointment, :closed, user: User.order('RANDOM()').take, doctor: Doctor.order('RANDOM()').take)
 end
 
