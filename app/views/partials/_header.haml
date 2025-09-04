@@ -1,54 +1,51 @@
-%nav.navbar.navbar-expand-lg.bg-light
-  .container
-    .navbar-header  
-      %a.navbar-brand{href: "#"}= t('.site_title')
-    #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
-      %ul.navbar-nav
-        %li.nav-item
-          = link_to t('.home_link'), root_path, class: 'nav-link active'
-        %li.nav-item.dropdown
-          = link_to t('.categories_link'), '#',
-              aria: {expanded: false},
-              data: {'bs-toggle': 'dropdown'}, role: 'button',
-              class: 'categories-link nav-link dropdown-toggle'
-          %ul.dropdown-menu
-            = link_to t('.all_categories'), doctors_path,  class: 'dropdown-item'
-            - categories.each do |category|
-              %li= link_to "#{category.title}", doctors_path(category_id: category.id), class: 'dropdown-item'
-        - if doctor_signed_in?
-          %li.nav-item.dropdown
-            = link_to current_account.name, '#',
-                aria: {expanded: false, haspopup: true},
-                data: {'bs-toggle': 'dropdown'}, role: 'button',
-                class: 'my-account-link nav-link dropdown-toggle'
-            %ul.dropdown-menu#doctor-account
-              %li= link_to t('.pacients'), doctors_pacients_path, class: 'pacients-link dropdown-item'
-              %li= link_to t('.appointments'), doctors_appointments_path(status: 'active'), class: 'appointments-link dropdown-item'
-              %li= link_to t('.profile'), doctors_profile_path, class: 'profile-link dropdown-item'
-              %li.divider{ role: 'separator' }
-              %li= button_to t('.log_out'), destroy_doctor_session_path,
-                method: :delete, class: 'log-out-link dropdown-item'
-        - elsif user_signed_in?
-          %li.nav-item.dropdown
-            = link_to current_account.name, '#',
-                aria: {expanded: false, haspopup: true},
-                data: {'bs-toggle': 'dropdown'}, role: 'button',
-                class: 'my-account-link nav-link dropdown-toggle'
-            %ul.dropdown-menu#user-account
-              %li= link_to t('.appointments'), users_appointments_path(status: 'active'),
-                class: 'appointments-link dropdown-item'
-              %li= link_to t('.profile'), users_profile_path, class: 'profile-link dropdown-item'
-              %li.divider{role: "separator"}
-              %li= button_to t('.log_out'), destroy_user_session_path,
-                method: :delete, class: 'log-out-link dropdown-item'
-        - else
-          %li.nav-item.dropdown
-            = link_to t('.login'), '#',
-                aria: {expanded: false, haspopup: true},
-                data: {'bs-toggle': 'dropdown'}, role: 'button',
-                class: 'login-link nav-link dropdown-toggle'
-            %ul.dropdown-menu
-              %li= link_to t('.login_as_doctor'), new_doctor_session_path, class: 'login-doctor-link dropdown-item'
-              %li= link_to t('.login_as_pacient'), new_user_session_path, class: 'login-pacient-link dropdown-item'
+%header
+  %nav.navbar.navbar-expand-lg.bg-light
+    .container
+      .navbar-header  
+        %a.navbar-brand{href: "#"}= t('.site_title')
+      #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
+        %ul.navbar-nav
           %li.nav-item
-            = link_to t('.sign_up'), new_user_registration_path, class: 'signup-link nav-link'
+            = link_to t('.home_link'), root_path, class: 'nav-link active home-link'
+          %li.nav-item.dropdown
+            = link_to t('.categories_link'), '#',
+                aria: {expanded: false},
+                data: {'bs-toggle': 'dropdown'}, role: 'button',
+                class: 'categories-link nav-link dropdown-toggle'
+            %ul.dropdown-menu.categories-menu
+              = link_to t('.all_categories'), doctors_path,  class: 'dropdown-item all-categories'
+              - categories.each do |category|
+                %li= link_to "#{category.title}", doctors_path(category_id: category.id),
+                  class: 'dropdown-item ctegory-link'
+          - if account_signed_in?
+            %li.nav-item.dropdown
+              = link_to current_account.name, '#',
+                  aria: {expanded: false, haspopup: true},
+                  data: {'bs-toggle': 'dropdown'}, role: 'button',
+                  class: 'account-menu-button nav-link dropdown-toggle'
+              %ul.dropdown-menu.account-menu#doctor-account
+                - if doctor_signed_in?
+                  %li= link_to t('.pacients'),
+                    public_send("#{current_account.class.name.pluralize.downcase}_pacients_path"),
+                    class: 'pacients-link dropdown-item'
+                %li= link_to t('.appointments'),
+                  { controller: "#{current_account.class.name.pluralize.downcase}/appointments", status: 'active' },
+                  class: 'appointments-link dropdown-item'
+                %li= link_to t('.profile'),
+                  public_send("#{current_account.class.name.pluralize.downcase}_profile_path"),
+                  class: 'profile-link dropdown-item'
+                %li.divider{ role: 'separator' }
+                %li= button_to t('.logout'),
+                  destroy_session_path(current_account), method: :delete,
+                  class: 'logout-button dropdown-item', form_class: 'logout-form'
+          - else
+            %li.nav-item.dropdown
+              = link_to t('.login'), '#',
+                  aria: {expanded: false, haspopup: true},
+                  data: {'bs-toggle': 'dropdown'}, role: 'button',
+                  class: 'login-menu-button nav-link dropdown-toggle'
+              %ul.dropdown-menu.login-menu
+                %li= link_to t('.login_as_doctor'), new_doctor_session_path, class: 'login-doctor-link dropdown-item'
+                %li= link_to t('.login_as_pacient'), new_user_session_path, class: 'login-pacient-link dropdown-item'
+            %li.nav-item
+              = link_to t('.sign_up'), new_user_registration_path, class: 'sign-up-link nav-link'

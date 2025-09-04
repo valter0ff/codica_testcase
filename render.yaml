@@ -1,0 +1,22 @@
+databases:
+  - name: healthcare_app
+    databaseName: healthcare_app
+    user: healthcare_app
+    plan: free
+
+services:
+  - type: web
+    name: healthcare_app
+    runtime: ruby
+    plan: free
+    buildCommand: './bin/render-build.sh'
+    startCommand: 'bundle exec rails server'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: healthcare_app
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
